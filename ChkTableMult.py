@@ -1,15 +1,31 @@
-# Проверка таблицы умножения
-import datetime
 import os
 import time
 from random import randint
+# Основное меню (болванка)
+'''print('Привет! Выбери, что ты будешь делать первым делом')
+print('')
+print('1. Проверка таблицы умножения')
+print('2. Проверка деления')
+userChoise = int(input())
+while True:
+    if userChoise != 1 and userChoise != 2:
+        os.system('cls')
+        print('Нажми [1] и [Enter] для проверки таблицы умножения или [2] и [Enter] для проверки деления!')
+        print()
+        print('1. Проверка таблицы умножения')
+        print('2. Проверка деления')
+        userChoise = int(input())
+    else:
+        break'''
+# Проверка таблицы умножения
 print('Реши правильно 20 примеров.')
 print()
+import datetime
 errCount = 0
 startTime = datetime.datetime.now()
 for k in range(20):
-    a = randint(1,5)
-    b = randint(1,10)
+    a = randint(2,5)
+    b = randint(2,9)
     rightOtvet = a * b
 # Меняем аргументы местами
     while True:
@@ -51,7 +67,7 @@ while True:
 print()
 # Запись статистики в файл
 today = datetime.datetime.today()
-os.chdir('E:\Python\Michael')
+os.chdir('D:\Mike')
 f = open('results.txt', 'a')
 f.write(today.strftime("%d/%m/%Y - "))
 f.write(time.strftime("%H:%M:%S"))
@@ -68,6 +84,7 @@ f.write('%')
 f.write('\n')
 f.write('-----')
 f.write('\n')
+# f.write('Ошибки:')
 f.write('\n')
 f.close()
 input('Для выхода нажми клавишу ENTER')
